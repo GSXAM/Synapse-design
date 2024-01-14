@@ -1,0 +1,10 @@
+HELLO_WORLD uses the echo command to say "Hello, world!".
+HELLO_WORLD uses the echo command to say "Hello, world!".
+HELLO_WORLD uses the echo command to say "Hello, world!".
+HELLO_WORLD uses the echo command to say "Hello, world!".
+index_file.csh, the C shell script;
+gettysburg_address.txt, the text of the Gettysburg Address.
+HELLO_WORLD uses the echo command to say "Hello, world!".
+index_file.csh, the C shell script;
+gettysburg_address.txt, the text of the Gettysburg Address.
+HELLO_WORLD uses the echo command to say "Hello, world!".
