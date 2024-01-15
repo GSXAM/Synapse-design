@@ -1,4 +1,4 @@
-#!/bin/tclsh
+#!/usr/bin/tclsh
 proc rect {{a 0} {b 1}} {
     return [expr $a * $b]
 }
@@ -35,7 +35,4 @@ proc print_fibo_re {{n 1}} {
 }
 
 # --------------- Main -------------
-set n [lindex $argv 0]
-puts [set a [fibonacci $n]]
-puts [set b [fibo_recursive $n]]
-puts [set c [print_fibo_re $n]]
+puts [fibonacci 8]
