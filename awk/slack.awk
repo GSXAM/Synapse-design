@@ -1,7 +1,7 @@
 #!/usr/bin/awk -f
 
 BEGIN	{
-    while (getline line < "inputfile.txt") {
+    while (getline line < "input/inputfile.txt") {
         # Nếu là line Endpoint thì raise flag lên
         if (match(line, "Endpoint")) {
             ep_flag = 1;
