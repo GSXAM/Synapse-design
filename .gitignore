@@ -1,1 +1,9 @@
 *test*
+# Ignoring everything. The /* - without the slash "/",
+# the wildcard would also exclude everything within subfolder.
+/*
+
+# Exceptions:
+!pw.txt
+!.gitignore
+!/python

@@ -1,0 +1,11 @@
+current_design "HLB18_MAIN"
+
+clock -testclock -frequency 200 -name "HLB18_MAIN.clock2"
+clock -testclock -name "HLB18_MAIN.path.to.clock0"
+clock -testclock -frequency 100 -name "HLB18_MAIN.path.to.clock1"
+test_mode -value 1 -name "HLB18_MAIN.path.to.testmode1"
+test_mode -value 0 -name "HLB18_MAIN.testmode2"
+reset -async -name "HLB18_MAIN.path.to.reset2"
+	test_mode -scanshift -value 0 -name "HLB18_MAIN.path.to.reset2"
+reset -async -name "HLB18_MAIN.reset1"
+	test_mode -scanshift -value 1 -name "HLB18_MAIN.reset1"
