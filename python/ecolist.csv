@@ -1,8 +1,8 @@
-No,Name,Type,Value,Location,Direction,ECO,MasterReset
-1,HLB18_MAIN.clock2,clock,200,port,input,x,
-2,HLB18_MAIN.path.to.clock0,clock,,pin,output,x,
-3,HLB18_MAIN.path.to.clock1,clock,100,pin,output,x,
-4,HLB18_MAIN.path.to.testmode1,contraint,1,pin,input,x,
-5,HLB18_MAIN.testmode2,contraint,0,port,input,x,
-6,HLB18_MAIN.path.to.reset2,reset,0,pin,input,x,x
-7,HLB18_MAIN.reset1,reset,1,port,input,x,
+No,Name,Type,Value,Location,Direction,ECO,MasterReset,OnlyScanMode
+1,HLB18_MAIN.clock2,clock,200,port,input,x,,
+2,HLB18_MAIN.path.to.clock0,clock,,pin,output,x,,
+3,HLB18_MAIN.path.to.clock1,clock,100,pin,output,x,,
+4,HLB18_MAIN.path.to.testmode1,contraint,1,pin,input,x,,x
+5,HLB18_MAIN.testmode2,contraint,0,port,input,x,,
+6,HLB18_MAIN.path.to.reset2,reset,0,pin,input,x,x,
+7,HLB18_MAIN.reset1,reset,1,port,input,x,x,

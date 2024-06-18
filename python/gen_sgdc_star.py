@@ -87,7 +87,39 @@ def gen_starECO(csv_file_path, output_folder=".", design="DESIGN_NAME"):
                 'add_connection -from SNIDFT_scan_mode -to SNIDFT_MBIST_OR_SCAN/A2\n\n']
 
     # Add code to processing csv file
+    csvfile = open(csv_file_path, 'r')
+    csvload = csv.reader(csvfile, delimiter=',')
+    next(csvload) # ignore first title row
+    MasterRST_cnt = 0
+    MasterRST_ECO_flag = 0
+    MasterRST_row = 0
+    for row in csvload:
+        if (row[0].isnumeric()):
+            if (row[2] == "reset"):
+                if (row[7] == "x"):
+                    MasterRST_row = row
+                    MasterRST_cnt += 1
+    # Check if there have MasterRST port, only 1 port is MasterRST and value of this port must equal to 1
+    #   Count MasterRST port:
+    #       MasterRST_cnt = 0: --> print: "Infor: No MasterRST was specified" --> Disable MasterRST_ECO_flag=0
+    #       MasterRST_cnt > 1: --> return: "Error: Too many MasterRST ports were assigned"
+    #       MasterRST_cnt = 1:
+    #           Check value of port:
+    #               Value = 0: return: "Error: MasterRST port have value 0"
+    #               Value = 1: print: "Info: MasterRST port have value 1" --> Enable MasterRST_ECO_flag=1
+    if (MasterRST_cnt == 0):
+        print("Infor: No MasterRST was specified")
+        MasterRST_ECO_flag = 0
+    elif (MasterRST_cnt > 1):
+        return "Error: Too many MasterRST ports were assigned"
+    elif (MasterRST_cnt == 1):
+        if (MasterRST_row[3] == 0):
+            return "Error: MasterRST port have value 0"
+        else:
+            MasterRST_ECO_flag = 1
+            print("Info: MasterRST port have value 1")
 
+    csvfile.close()
     starECO_writer = open(starECO_file_path, 'w')
     starECO_writer.writelines(writelist)
     starECO_writer.close()
@@ -101,6 +133,8 @@ sheet_names_to_save = "ecolist"  # Add the desired sheet names
 output_folder_path = "."  # Specify the output folder
 design_name = "HLB18_MAIN"
 
-csv_file_path = excel_to_csv(excel_file_path, sheet_names_to_save, output_folder_path)
+# csv_file_path = excel_to_csv(excel_file_path, sheet_names_to_save, output_folder_path)
+csv_file_path = "./ecolist.csv"
 sgdc_file_path = gen_sgdc(csv_file_path, output_folder_path, design_name)
 starECO_file_path = gen_starECO(csv_file_path, output_folder_path, design_name)
+print(starECO_file_path)
