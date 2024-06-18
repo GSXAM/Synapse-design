@@ -5,5 +5,9 @@
 
 # Exceptions:
 !pw.txt
+!.drawio
 !.gitignore
 !/python
+/python/*.tcl
+/python/*.sgdc
+/python/*.txt
