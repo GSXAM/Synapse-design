@@ -1,10 +1,10 @@
+def show_val(vals, name):
+    print("Name:", name, "val:", vals[name])
 
-       
+vals = {'a': 1, 'b': 2}
+show_val(vals, 'b')
 
 
-port = "HLB18_MAIN.path_to_net_port"
-pin = "HLB18_MAIN.path_to_net_pin.hierarchy_to_cell.name_of_pin.pin"
-
-path_list = [port, pin]
-for p in path_list:
-       print(processPATH(p))
+my_variable = 42
+print(list(globals().keys())[list(globals().values()).index(my_variable)])
+print(list(globals().values()).index(my_variable))

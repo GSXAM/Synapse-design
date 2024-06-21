@@ -2,7 +2,7 @@ No,Name,Type,Value,Direction,ECO,MasterReset,OnlyScanMode
 1,HLB18_MAIN.clock2,clock,200,input,x,,
 2,HLB18_MAIN.path.to.clock0,clock,,output,x,,
 3,HLB18_MAIN.path.to.clock1,clock,100,output,x,,
-4,HLB18_MAIN.path.to.testmode1,contraint,1,input,x,,x
-5,HLB18_MAIN.testmode2,contraint,0,input,x,,
-6,HLB18_MAIN.path.to.reset2,reset,0,input,x,x,
+4,HLB18_MAIN.path.to.testmode1,constraint,1,input,x,,x
+5,HLB18_MAIN.testmode2,constraint,0,input,x,,
+6,HLB18_MAIN.path.to.reset2,reset,0,input,x,,
 7,HLB18_MAIN.reset1,reset,1,input,x,x,
